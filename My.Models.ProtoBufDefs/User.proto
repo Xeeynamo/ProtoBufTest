@@ -1,0 +1,14 @@
+syntax = "proto3";
+package My.Models;
+
+import "google/protobuf/timestamp.proto";
+import "GenderType.proto";
+import "PhoneNumber.proto";
+
+message User {
+  int32 id = 1;
+  google.protobuf.Timestamp created_date = 2;
+  string name = 3;
+  GenderType gender = 4;
+  repeated PhoneNumber phones = 5;
+}

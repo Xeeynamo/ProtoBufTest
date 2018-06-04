@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+package My.Models;
+
+import "User.proto";
+
+message Family {
+  User parent = 1;
+  repeated User children = 2;
+}

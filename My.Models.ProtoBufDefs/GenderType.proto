@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package My.Models;
+
+enum GenderType {
+	OTHER = 0;
+	MALE = 1;
+	FEMALE = 2;
+}

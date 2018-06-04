@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="User.proto">
+      <Generator>ProtobufGenerator</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="FOR %%A IN (&quot;$(ProjectDir)*.proto&quot;) DO (&#xD;&#xA;	$(SolutionDir)toolset\protoc\bin\protoc -I=$(ProjectDir) --csharp_out=$(SolutionDir)My.Models %%A&#xD;&#xA;)" />
+  </Target>
+
+</Project>

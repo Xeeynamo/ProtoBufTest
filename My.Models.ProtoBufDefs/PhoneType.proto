@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package My.Models;
+
+enum PhoneType {
+	MOBILE = 0;
+	HOME = 1;
+	WORK = 2;
+}
